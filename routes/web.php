@@ -11,6 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Auth::routes(['register' => false]);
+
+Route::get('/', function(){
+    return view('auth/login');
 });
+
+Route::group(['middleware' => ['auth']], function () {
+
+        Route::namespace('Admin')->prefix('admin')->group(function (){
+
+        Route::resource('/users', 'UserController');
+        Route::resource('/dashboard', 'DashboardController');
+
+    });
+
+
+
+});
+
+
