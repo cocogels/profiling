@@ -41,6 +41,56 @@ return [
             'provider' => 'users',
         ],
 
+
+
+        'super-admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'human-resource' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+
+        'school-admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+
+        'academic-head' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+
+        'services' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+
+        'lecturer' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+
+
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',

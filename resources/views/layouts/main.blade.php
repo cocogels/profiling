@@ -21,7 +21,7 @@
 
 
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-collapse layout-top-nav">
 <!-- Site wrapper -->
 <div class="wrapper">
 
@@ -58,6 +58,53 @@
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
+
+  
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+      
+    <div  class="user-header bg-dark">
+        <div class="row">
+          <div class="col">
+            
+          </div>
+          <div class="col">
+            <br>
+            <a href="#" d>
+               <img src="../../dist/img/avatar5.png" data-toggle="tooltip"  title="profile"class="img-circle elevation-2 "  alt="User Image">
+            </a>
+          </div>
+          <div class="col">
+            
+          </div>
+        </div>
+        <div class="bg-info">
+          <hr>
+        </div>
+        <div class="user-body bg-dark">
+          <div class="row">
+              <div class="col-md-10">
+                &nbsp;
+                 <a href="#">Profile</a>
+                
+              </div>
+          </div>
+          <!-- Menu Footer-->
+          <div class="user-footer">
+            <a class="ml-2" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit(); ">
+                                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
+          </div>
+
+        </div>
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->

@@ -4,6 +4,7 @@
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 
 class RoleTableSeeder extends Seeder
 {
@@ -14,17 +15,81 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        $roles = ['SuperAdmin', 'Admin', 'HumanResource', 'AcademicHead', 'SchoolAdmin', 'Services', 'Lecturer', 'Student'];
+        // $roles = ['SuperAdmin', 'Admin', 'HumanResource', 'AcademicHead', 'SchoolAdmin', 'Services', 'Lecturer', 'Student'];
 
-        foreach( $roles as $role ){
-            $data[] = [
-                'name' => $role,
-                'guard_name' => 'web',
+        // foreach( $roles as $role ){
+        //     $data[] = [
+        //         'name' => $role,
+        //         'guard_name' => 'web',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now()
+        //     ];
+        // }
+
+        // DB::table('roles')->insert($data);
+
+
+        $superAdmin = Role::create([
+            'name' => 'SuperAdmin',
+            'guard_name' => 'super-admin',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        $admin = Role::create([
+            'name' => 'Admin',
+            'guard_name' => 'admin',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]); 
+
+        $hr = Role::create([
+                'name' => 'Human-Resource',
+                'guard_name' => 'human-resource',
                 'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ];
-        }
+                'updated_at' => Carbon::now(),
+        ]);
 
-        DB::table('roles')->insert($data);
+
+        $acadhead = Role::create([
+                'name' => 'Academic-Head',
+                'guard_name' => 'academic-head',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+        ]);
+
+
+        $schoolAdmin = Role::create([
+                'name' => 'School-Admin',
+                'guard_name' => 'school-admin',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+        ]);  
+
+
+       $services = Role::create([
+                'name' => 'Services',
+                'guard_name' => 'services',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+        ]);
+
+
+        $lecturer = Role::create([
+                'name' => 'Lecturer',
+                'guard_name' => 'lecturer',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+        ]);
+
+
+        $student = Role::create([
+                'name' => 'Student',
+                'guard_name' => 'student',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+        ]);        
+     
+ 
     }
 }
