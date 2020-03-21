@@ -11,6 +11,8 @@
     },
     "devDependencies": {
         "axios": "^0.19",
+        "minimist": ">=1.2.2",
+        "acorn": ">=6.4.1",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
         "jquery": "^3.2",
