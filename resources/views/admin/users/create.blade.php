@@ -58,3 +58,29 @@
 </div>
 
 @endsection
+
+
+@section('extra-script')
+<script type="text/javascript">
+  $(document).ready( function(){
+
+      $(".toggle-password").click( function(){
+        
+        $(this).toggleClass("far fa-eye-slash");
+
+        var input = $($(this).attr("toggle"));
+        
+        if ( input.attr("type") == "password"){
+
+            input.attr("type", "text");
+
+        } else {
+
+          input.attr('type', 'password');
+
+        };
+        
+      });
+  });
+</script>
+@endsection
