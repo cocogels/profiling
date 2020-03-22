@@ -82,7 +82,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item ml-3 pb-2">
-                 <a href="{{ route('users.index') }}" class="nav-link">
+                 <a href="{{ route('view.users.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-users-cog"></i>
                     <p style="font-size: 13px;">
                         User Maintenance

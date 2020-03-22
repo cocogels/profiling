@@ -33,7 +33,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
+      <div class="container-fluid ml-md-5">
         @yield('content-header')
       </div><!-- /.container-fluid -->
     </div>

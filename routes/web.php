@@ -20,9 +20,14 @@ Route::get('/', function(){
 
 Route::group(['middleware' => ['auth']], function () {
 
-        Route::namespace('Admin')->prefix('admin')->group(function (){
+        Route::namespace('Admin')->group(function (){
 
-        Route::resource('/users', 'UserController');
+        Route::group(['prefix' => 'users'], function() {
+        	Route::get('/', 'UserController@index')->name('view.users.index');
+        	Route::get('/create-user', 'UserController@create')->name('view.users.create');
+        });
+
+        
         Route::resource('/dashboard', 'DashboardController');
 
     });
