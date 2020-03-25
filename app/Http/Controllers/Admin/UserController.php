@@ -5,6 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Contracts\Session\Session;
+use Input;
+use Spatie\Permission\Models\Role;
+
+
 
 class UserController extends Controller
 {
@@ -32,7 +38,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+
+        $data = Role::where('name', '!=' ,'SuperAdmin')->pluck('name', 'id');
+        return view('admin.users.create', compact('data'));
     }
 
     /**
@@ -43,8 +51,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = $request->all();
+
+        $data['password'] = Hash::make($data['password']);
+
+        $user = User::create($data);
+        $user->assignRole($request->input('roles'));
+
+        return redirect()->route('view.users.index')->with('success_message', 'Successfully Added New User');
+
     }
+
 
     /**
      * Display the specified resource.
@@ -91,3 +109,4 @@ class UserController extends Controller
         //
     }
 }
+

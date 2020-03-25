@@ -6,6 +6,13 @@
 
 @section('title', 'Users | Create')
 
+@section('extra-link')
+ <!-- Select2 -->
+  <link rel="stylesheet" href="{{ asset('/plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }} ">
+
+@endsection
+
 
 @section('content-header')
 
@@ -26,6 +33,10 @@
 @endsection
 
 @section('content')
+
+
+
+
 <div class="card card-primary card-outline ml-xl-5 mr-xl-5">
     <div class="card-header">
       <h3 class="card-title">
@@ -46,7 +57,7 @@
           <div class="col-7 col-sm-9">
               <div class="container">
                 <div class="container-fluid">
-                       <form class="#" method="POST" >
+                       <form method="POST" action="{{ route('users.store') }}">
                       @csrf
                       @include('admin.users.form')
                     </form>
@@ -83,4 +94,8 @@
       });
   });
 </script>
+
+
+<!-- Select2 -->
+<script src="../../plugins/select2/js/select2.full.min.js"></script>
 @endsection

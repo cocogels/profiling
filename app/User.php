@@ -6,6 +6,9 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+
+
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -19,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'password'
     ];
 
     /**
@@ -40,18 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $guard_name = 'web';
 
 
 
-    protected $guard_name = [
-        'super-admin',
-        'admin',
-        'human-resource',
-        'academic-head',
-        'school-admin',
-        'services',
-        'lecturer',
-        'student',
-        'web'
-    ];
 }

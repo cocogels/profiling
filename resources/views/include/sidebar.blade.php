@@ -51,8 +51,32 @@
                     </p>
                  </a>
               </li>
+
             </ul>
           </li>
+           <li class="nav-item has-treeview mt-0 pt-0">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-folder"></i>
+                <p style="font-size: 15px;">
+                  Common
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item ml-3 pb-2">
+                 <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-cog"></i>
+                    <p style="font-size: 13px;">
+                        Subjects
+                    </p>
+                 </a>
+              </li>
+              
+            </ul>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

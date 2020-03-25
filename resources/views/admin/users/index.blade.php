@@ -4,7 +4,7 @@
 
 
 
-@section('title', '| Users')
+@section('title', 'Users')
 
 
 @section('content-header')
@@ -26,6 +26,17 @@
 @endsection
 
 @section('content')
+<div class="ml-xl-5 mr-xl-5">
+  @if( $message = Session::get('success_message'))
+    <div class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h3><i class="icon fas fa-check"></i>
+                {{ $message }}
+              </h3>
+    </div>
+@endif
+</div>
+
 <div class="card card-primary card-outline ml-xl-5 mr-xl-5">
     <div class="card-header">
       <h3 class="card-title">

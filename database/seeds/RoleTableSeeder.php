@@ -31,21 +31,21 @@ class RoleTableSeeder extends Seeder
 
         $superAdmin = Role::create([
             'name' => 'SuperAdmin',
-            'guard_name' => 'super-admin',
+            'guard_name' => 'web',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         $admin = Role::create([
             'name' => 'Admin',
-            'guard_name' => 'admin',
+            'guard_name' => 'web',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]); 
 
         $hr = Role::create([
                 'name' => 'Human-Resource',
-                'guard_name' => 'human-resource',
+                'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
         ]);
@@ -53,7 +53,7 @@ class RoleTableSeeder extends Seeder
 
         $acadhead = Role::create([
                 'name' => 'Academic-Head',
-                'guard_name' => 'academic-head',
+                'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
         ]);
@@ -61,7 +61,7 @@ class RoleTableSeeder extends Seeder
 
         $schoolAdmin = Role::create([
                 'name' => 'School-Admin',
-                'guard_name' => 'school-admin',
+                'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
         ]);  
@@ -69,7 +69,7 @@ class RoleTableSeeder extends Seeder
 
        $services = Role::create([
                 'name' => 'Services',
-                'guard_name' => 'services',
+                'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
         ]);
@@ -77,7 +77,7 @@ class RoleTableSeeder extends Seeder
 
         $lecturer = Role::create([
                 'name' => 'Lecturer',
-                'guard_name' => 'lecturer',
+                'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
         ]);
@@ -85,7 +85,7 @@ class RoleTableSeeder extends Seeder
 
         $student = Role::create([
                 'name' => 'Student',
-                'guard_name' => 'student',
+                'guard_name' => 'web',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
         ]);        
