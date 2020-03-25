@@ -9,6 +9,9 @@
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- DataTables -->
+  <link rel="stylesheet" href=" {{ asset('/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('/plugins/fontawesome-free/css/all.min.css') }}">
@@ -115,6 +118,10 @@
 <script src="{{ asset('/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/dist/js/adminlte.min.js') }}"></script>
+
+<!-- DataTables -->
+<script src=" {{ asset('/plugins/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
 
 @yield('extra-script')
 </body>

@@ -6,7 +6,9 @@
 
 @section('title', 'Users')
 
+@section('extra-link')
 
+@endsection
 @section('content-header')
 
 <div class="row">
@@ -55,12 +57,32 @@
           </div>
         </div>
         <div class="col-7 col-sm-9">
-          <div class="tab-content" id="vert-tabs-tabContent">
-            <div class="tab-pane text-left fade show active" id="vert-tabs-home" role="tabpanel" aria-labelledby="vert-tabs-home-tab">
-
+          <div class="card ml-xl-5">
+            <div class="card-header">
+              <h3 class="card-title text-center">
+                <i class="fas fa-info-circle"></i>
+                    &nbsp;  Users
+                </h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i></button>
+                </div>
             </div>
-            <div class="tab-pane fade" id="vert-tabs-profile" role="tabpanel" aria-labelledby="vert-tabs-profile-tab">
- 
+            <div class="card-body">
+              <table id="table_users_lists" class="table table-bordered table-striped" cellspacing="0">
+                <thead>
+                   <tr style="font-size: 12px; text-transform: uppercase;">
+                     @php 
+                        $arr_header = ['#No', 'Email','Action'];
+                     @endphp
+                     @for( $num = 0; $num <(count($arr_header)); $num++)
+                      <th class="text-center">
+                           {{ $arr_header[$num] }}
+                      </th>
+                     @endfor
+                   </tr>
+                </thead>
+              </table>
             </div>
           </div>
         </div>
@@ -68,4 +90,37 @@
     </div>
 </div>
 
+@endsection
+
+
+@section('extra-script')
+
+
+<script type="text/javascript">
+    $(document).ready( function( e ){
+      e.preventDefault;
+
+      // $('#table_users_lists').DataTable({
+      //     "processing": true,
+      //     "serverside": true,
+      //     "language": {
+      //       "processing": ' <i class="fas fa-3x fa-sync-alt"></i><span>Loading...</span>'
+      //     },
+      //     "ajax":{
+      //         "type": "post",
+      //         "url": "{{ route('users.data') }}",
+      //         "dataType": "json",
+      //         "data": {"_token": "<?= csrf_token() ?>"}
+      //     },
+      //     "columns": [
+      //         { "data": "email"},
+      //         { "data": "action", 
+      //           "orderable": false,
+      //       },
+      //     ],         
+      // });
+      // 
+      $('#table_users_lists').DataTable();
+    });
+</script>
 @endsection

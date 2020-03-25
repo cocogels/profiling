@@ -52,7 +52,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
-        $data = $request->all();
+        $data = $request->only(['email','password']);
 
         $data['password'] = Hash::make($data['password']);
 
@@ -107,6 +107,13 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+
+
+    public function getUsersData()
+    {
+        
     }
 }
 

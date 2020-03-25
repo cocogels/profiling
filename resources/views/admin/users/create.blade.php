@@ -77,7 +77,7 @@
 
       $(".toggle-password").click( function(){
         
-        $(this).toggleClass("far fa-eye-slash");
+        $(this).toggleClass("fa-eye fa-eye-slash");
 
         var input = $($(this).attr("toggle"));
         
@@ -90,9 +90,29 @@
           input.attr('type', 'password');
 
         };
+
         
       });
+
+
+       $(".toggle-c-password").click( function(){
+        
+        $(this).toggleClass("fa-eye fa-eye-slash");
+
+        var input = $($(this).attr("toggle"));
+        
+        if ( input.attr("type") == "password"){
+
+            input.attr("type", "text");
+
+        } else {
+
+          input.attr('type', 'password');
+
+        };
+      });
   });
+
 </script>
 
 

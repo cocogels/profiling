@@ -3,7 +3,7 @@
 <div class="card-header">
   <h3 class="card-title text-center">
 	<i class="fas fa-info-circle"></i>
-  		User Information
+  		&nbsp; User Information
 	</h3>
   <div class="card-tools">
     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -41,18 +41,24 @@
 				 <div class="form-group">
 			        <label for="inputPassword">Password <span style="color: red; font-size: 20px;">*</span> </label>
 					<div class="input-group-prepend">
-			        	<input type="password" id="password" name="password" class="form-control border-right-0" required="on" autocomplete="off">
+			        	<input type="password" id="password" name="password" class="form-control" required="on" autocomplete="off">
 			        	<span class="input-group-append">
-		                    <span toggle="#password" class="toggle-password btn btn-default border-left-0 far fa-eye field-icon">
+		                    <span toggle="#password" class="toggle-password btn btn-outline-default far fa-eye">
 		                    </span>
 	                  	</span>
 					</div>
 		      	</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-5">
 				 <div class="form-group">
-			        <label for="inputPassword">Confirm Password<span style="color: red; font-size: 20px;">*</span> </label>
+		 		   <label for="inputPassword">Confirm Password<span style="color: red; font-size: 20px;">*</span> </label>
+				 	<div class="input-group-prepend">
 			        <input type="password" id="c-password" name="c-password" class="form-control" required="on" autofocus="on" autocomplete="off">
+			        	<span class="input-group-append">
+		                    <span toggle="#c-password" class="toggle-c-password btn btn-outline-default far fa-eye">
+		                    </span>
+	                  	</span>
+				 	</div>
 			      </div>
 			</div>
       	
