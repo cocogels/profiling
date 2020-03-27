@@ -16,7 +16,7 @@
 
 		  <div class="form-group">
 	        <label for="inputEmail">Email Address <span style="color: red; font-size: 20px;">*</span> </label>
-	        <input type="text" id="email" name="email" class="form-control {{ $errors->has('email') ? 'has-error' : ''}}" required="on" autocomplete="off">
+	        <input type="text" id="email" name="email" data-toggle="tooltip"  data-placement="left" title="Required" tabindex="0" class="form-control {{ $errors->has('email') ? 'has-error' : ''}} border-top-0 border-left-0 border-right-0 rounded-0 border-dark" required="on" autocomplete="off">
 	        
 	        <div>
 	        	@if($errors->has('email'))
@@ -26,7 +26,7 @@
 	      </div>
 	      <div class="form-group">
                   <label>Role</label>
-                  <select name="roles" class="form-control select2" style="width: 100%;">
+                  <select name="roles" data-toggle="tooltip" title="Required" data-placement="left" class="form-control custom-select select2" style="width: 100%;">
                     <option selected="selected" disabled>---Select----</option>
                  	@foreach( $data as $key => $userRole )
                  		<option value="{{ $key }}">{{ $userRole}} </option>
@@ -41,21 +41,21 @@
 				 <div class="form-group">
 			        <label for="inputPassword">Password <span style="color: red; font-size: 20px;">*</span> </label>
 					<div class="input-group-prepend">
-			        	<input type="password" id="password" name="password" class="form-control" required="on" autocomplete="off">
+			        	<input type="password" id="password" name="password" data-toggle="tooltip" title="Required" data-placement="left" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 border-dark" required="on" autocomplete="off">
 			        	<span class="input-group-append">
-		                    <span toggle="#password" class="toggle-password btn btn-outline-default far fa-eye">
+		                    <span toggle="#password" class="toggle-password btn btn-outline-default border-top-0 border-left-0 border-right-0 rounded-0 border-dark far fa-eye">
 		                    </span>
 	                  	</span>
 					</div>
 		      	</div>
 			</div>
-			<div class="col-md-5">
+			<div class="col-md-6">
 				 <div class="form-group">
 		 		   <label for="inputPassword">Confirm Password<span style="color: red; font-size: 20px;">*</span> </label>
 				 	<div class="input-group-prepend">
-			        <input type="password" id="c-password" name="c-password" class="form-control" required="on" autofocus="on" autocomplete="off">
+			        <input type="password" id="c-password" name="c-password" data-toggle="tooltip" title="Required" data-placement="left" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 border-dark" required="on" autofocus="on" autocomplete="off">
 			        	<span class="input-group-append">
-		                    <span toggle="#c-password" class="toggle-c-password btn btn-outline-default far fa-eye">
+		                    <span toggle="#c-password" class="toggle-c-password btn btn-outline-default border-top-0 border-left-0 border-right-0 rounded-0 border-dark far fa-eye">
 		                    </span>
 	                  	</span>
 				 	</div>

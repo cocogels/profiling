@@ -9,11 +9,12 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Session\Session;
 use Input;
 use Spatie\Permission\Models\Role;
-
-
+use App\Http\Traits\profiling\UserTraits;
 
 class UserController extends Controller
 {
+    use UserTraits;
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -83,7 +84,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+                
     }
 
     /**
@@ -111,9 +112,9 @@ class UserController extends Controller
 
 
 
-    public function getUsersData()
+    public function serverProcess(Request $request)
     {
-        
+        return $this->serverProcessFunction($request);
     }
 }
 

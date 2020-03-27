@@ -20,7 +20,6 @@
           &nbsp;&nbsp;
           <font style="color: #000;">
           <i class="fa fa-angle-double-right fa-fw"></i> &nbsp;&nbsp; <i class="fa fa-folder-open fa-fw"></i> Lists </font>
-
       </h5>
   </div>
 </div>
@@ -30,13 +29,15 @@
 @section('content')
 <div class="ml-xl-5 mr-xl-5">
   @if( $message = Session::get('success_message'))
-    <div class="alert alert-success alert-dismissible">
+  <div class="card">
+    <div class="card-body alert alert-dismissible bg-teal color-palette">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               <h3><i class="icon fas fa-check"></i>
                 {{ $message }}
               </h3>
-    </div>
-@endif
+    </div>    
+  </div>
+  @endif
 </div>
 
 <div class="card card-primary card-outline ml-xl-5 mr-xl-5">
@@ -52,8 +53,10 @@
           <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-link active" id="vert-tabs-home-tab" data-toggle="pill" href="#vert-tabs-home" role="tab" aria-controls="vert-tabs-home" aria-selected="true"><i class="fas fa-list"></i>&nbsp; List</a>
 
+            <a class="nav-link" id="vert-tabs-profile-tab" data-toggle="tooltip" data-placement="left" title="Add New User" href="{{ route('view.users.create') }}" role="tab" aria-controls="vert-tabs-add" aria-selected="false"><i class="far fa-plus-square"></i>&nbsp; Add </a>
 
-            <a class="nav-link" id="vert-tabs-profile-tab" data-toggle="tooltip" data-placement="right" title="Add New User" href="{{ route('view.users.create') }}" role="tab" aria-controls="vert-tabs-add" aria-selected="false"><i class="far fa-plus-square"></i>&nbsp; Add </a>
+           <a class="nav-link" id="vert-tabs-profile-tab" data-toggle="tooltip" data-placement="left" title="Trashed" href="#" role="tab" aria-controls="vert-tabs-add" aria-selected="false"><i class="fas fa-trash-restore-alt"></i>&nbsp; Trash </a>
+
           </div>
         </div>
         <div class="col-7 col-sm-9">
@@ -69,18 +72,12 @@
                 </div>
             </div>
             <div class="card-body">
-              <table id="table_users_lists" class="table table-bordered table-striped" cellspacing="0">
+              <table id="table_users_lists" class="table table-bordered table-striped table-hover" cellspacing="0">
                 <thead>
-                   <tr style="font-size: 12px; text-transform: uppercase;">
-                     @php 
-                        $arr_header = ['#No', 'Email','Action'];
-                     @endphp
-                     @for( $num = 0; $num <(count($arr_header)); $num++)
-                      <th class="text-center">
-                           {{ $arr_header[$num] }}
-                      </th>
-                     @endfor
-                   </tr>
+                  <tr style="font-size: 12px; text-transform: uppercase;">
+                    <th>Email</th>
+                    <th>Action</th>
+                  </tr>
                 </thead>
               </table>
             </div>
@@ -100,27 +97,29 @@
     $(document).ready( function( e ){
       e.preventDefault;
 
-      // $('#table_users_lists').DataTable({
-      //     "processing": true,
-      //     "serverside": true,
-      //     "language": {
-      //       "processing": ' <i class="fas fa-3x fa-sync-alt"></i><span>Loading...</span>'
-      //     },
-      //     "ajax":{
-      //         "type": "post",
-      //         "url": "{{ route('users.data') }}",
-      //         "dataType": "json",
-      //         "data": {"_token": "<?= csrf_token() ?>"}
-      //     },
-      //     "columns": [
-      //         { "data": "email"},
-      //         { "data": "action", 
-      //           "orderable": false,
-      //       },
-      //     ],         
-      // });
-      // 
-      $('#table_users_lists').DataTable();
+      $('#table_users_lists').DataTable({
+          "processing": true,
+          "serverSide": true,
+          "searching": true,
+          "ordering": true,
+          "autoWidth": false,
+          "language": {
+            "processing": '<i class="fas fa-3x fa-spin fa-sync-alt"></i><span>&nbsp; Loading...</span>'
+          },
+          "ajax":{
+              "type": "POST",
+              "url": "{{ route('server.process.data') }}",
+              "dataType": "json",
+              "data": {"_token": "<?= csrf_token() ?>"}
+          },
+          "columns": [
+              { "data": "email"},
+              { "data": "action", 
+                "orderable": false,
+            },
+          ],         
+      });
+    
     });
 </script>
 @endsection

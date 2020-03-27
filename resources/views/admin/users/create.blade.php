@@ -51,6 +51,8 @@
             <a class="nav-link" id="vert-tabs-home-tab" data-toggle="tooltip" title="User Lists" href="{{ route('view.users.index') }}" aria-controls="vert-tabs-list" aria-selected="true"><i class="fas fa-list"></i>&nbsp; List</a>
 
             <a class="nav-link active"  href="" data-toggle="tooltip" data-placement="right" title="Create new user"><i class="far fa-plus-square"></i>&nbsp; Add</a>
+            <a class="nav-link" id="vert-tabs-profile-tab" data-toggle="tooltip" data-placement="left" title="Trashed" href="#" role="tab" aria-controls="vert-tabs-add" aria-selected="false"><i class="fas fa-trash-restore-alt"></i>&nbsp; Trash </a>
+
           </div>
 
         </div>

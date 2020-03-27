@@ -6,6 +6,9 @@
 
 @section('title', 'Dashboard')
 
+@section('extra-link')
+
+@endsection
 
 @section('content-header')
    <div class="col-lg-3 col-6">
@@ -28,5 +31,10 @@
 
 @section('content')
 
+
+@endsection
+
+
+@section('extra-script')
 
 @endsection
